@@ -1,7 +1,7 @@
-; Sat May 09 15:15:27 CEST 2015
+; Thu May 14 13:24:27 CEST 2015
 ; 
-;+ (version "3.5")
-;+ (build "Build 663")
+;+ (version "3.4.8")
+;+ (build "Build 629")
 
 ([addresses] of  %3AJADE-SLOT
 
@@ -19,6 +19,14 @@
 
 	(%3AJADE-IGNORE FALSE))
 
+([BookInfo] of  %3AJADE-CLASS
+
+	(%3AJADE-IGNORE FALSE))
+
+([Client] of  %3AJADE-CLASS
+
+	(%3AJADE-IGNORE FALSE))
+
 ([Concept] of  %3AJADE-CLASS
 
 	(%3AJADE-IGNORE TRUE))
@@ -28,6 +36,10 @@
 	(%3AJADE-IGNORE FALSE))
 
 ([Hotel] of  %3AJADE-CLASS
+
+	(%3AJADE-IGNORE FALSE))
+
+([HotelInfo] of  %3AJADE-CLASS
 
 	(%3AJADE-IGNORE FALSE))
 
@@ -55,6 +67,14 @@
 	(%3ASUPPORT "j2se"))
 
 ([RequestBankAccountStatus] of  %3AJADE-CLASS
+
+	(%3AJADE-IGNORE FALSE))
+
+([RequestHotelBooking] of  %3AJADE-CLASS
+
+	(%3AJADE-IGNORE FALSE))
+
+([RequestHotelInfo] of  %3AJADE-CLASS
 
 	(%3AJADE-IGNORE FALSE))
 
