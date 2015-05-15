@@ -50,6 +50,10 @@ public class HotelmaniaOntology extends jade.content.onto.Ontology  {
     public static final String STAFF="Staff";
     public static final String HOTEL_HOTELID="hotelId";
     public static final String HOTEL="Hotel";
+    public static final String HOTELINFO="HotelInfo";
+    public static final String BOOKINFO="BookInfo";
+    public static final String REQUESTBOOKINGINFO="RequestHotelBooking";
+    public static final String REQUESTHOTELINFO="RequestHotelInfo";
 
   /**
    * Constructor
@@ -67,6 +71,10 @@ public class HotelmaniaOntology extends jade.content.onto.Ontology  {
     add(timeSchema, es.upm.fi.emse.hotelmania.Time.class);
     ConceptSchema bankAccountSchema = new ConceptSchema(BANKACCOUNT);
     add(bankAccountSchema, es.upm.fi.emse.hotelmania.BankAccount.class);
+    ConceptSchema hotelInfoSchema = new ConceptSchema(HOTELINFO);
+    add(hotelInfoSchema, es.upm.fi.emse.hotelmania.HotelInfo.class);
+    ConceptSchema bookInfoSchema = new ConceptSchema(BOOKINFO);
+    add(bookInfoSchema, es.upm.fi.emse.hotelmania.BookInfo.class);
 
     // adding AgentAction(s)
     AgentActionSchema currentTimeSchema = new AgentActionSchema(CURRENTTIME);
@@ -81,6 +89,10 @@ public class HotelmaniaOntology extends jade.content.onto.Ontology  {
     add(responseBankAccountStatusSchema, es.upm.fi.emse.hotelmania.ResponseBankAccountStatus.class);
     AgentActionSchema requestBankAccountStatusSchema = new AgentActionSchema(REQUESTBANKACCOUNTSTATUS);
     add(requestBankAccountStatusSchema, es.upm.fi.emse.hotelmania.RequestBankAccountStatus.class);
+    AgentActionSchema requestHotelInfoSchema = new AgentActionSchema(REQUESTHOTELINFO);
+    add(requestHotelInfoSchema, es.upm.fi.emse.hotelmania.RequestHotelInfo.class);
+    AgentActionSchema requestBookingInfoSchema = new AgentActionSchema(REQUESTBOOKINGINFO);
+    add(requestBookingInfoSchema, es.upm.fi.emse.hotelmania.RequestHotelBooking.class);
 
     // adding AID(s)
 
@@ -105,7 +117,6 @@ public class HotelmaniaOntology extends jade.content.onto.Ontology  {
     hotelRegistrationSchema.add(HOTELREGISTRATION_HOTEL, hotelSchema, ObjectSchema.MANDATORY);
     responseBankAccountStatusSchema.add(RESPONSEBANKACCOUNTSTATUS_BALANCE, (TermSchema)getSchema(BasicOntology.FLOAT), ObjectSchema.MANDATORY);
     requestBankAccountStatusSchema.add(REQUESTBANKACCOUNTSTATUS_HOTEL, hotelSchema, ObjectSchema.MANDATORY);
-
     // adding name mappings
 
     // adding inheritance
