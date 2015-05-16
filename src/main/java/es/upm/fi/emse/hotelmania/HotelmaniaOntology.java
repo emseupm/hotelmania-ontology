@@ -36,6 +36,35 @@ public class HotelmaniaOntology extends jade.content.onto.Ontology  {
     public static final String REQUESTSTAFF="RequestStaff";
     public static final String CURRENTTIME_TIME="time";
     public static final String CURRENTTIME="CurrentTime";
+    
+    public static final String REQUESTHOTELINFO="RequestHotelInfo";
+    public static final String HOTELINFO="HotelInfo";
+    
+    
+    public static final String REQUESTHOTELBOOKING="RequestHotelBooking";
+    public static final String BOOKINFO="BookInfo";
+    
+    public static final String CLIENT="Client";
+    public static final String CLIENT_CLIENTID="clientId";
+    
+    public static final String REQUESTHOTELINFO_STARTDATE="startDate";
+    public static final String REQUESTHOTELINFO_NUMBEROFDAYS="numberOfDays";
+    
+    public static final String HOTELINFO_TOTALPRICE="totalPrice";
+    public static final String HOTELINFO_ROOMAVAILABILITY="roomAvailability";
+    
+    public static final String REQUESTHOTELBOOKING_STARTDATE="startDate";
+    public static final String REQUESTHOTELBOOKING_NUMBEROFDAYS="numberOfDays";
+    public static final String REQUESTHOTELBOOKING_CLIENT="client";
+    
+    
+    
+    
+    
+    public static final String BOOKINFO_PRICE="price";
+    
+    
+    
     public static final String BANKACCOUNT_ACCOUNTID="accountId";
     public static final String BANKACCOUNT_BALANCE="balance";
     public static final String BANKACCOUNT="BankAccount";
@@ -59,26 +88,55 @@ public class HotelmaniaOntology extends jade.content.onto.Ontology  {
     try { 
 
     // adding Concept(s)
+    ConceptSchema clientSchema = new ConceptSchema(CLIENT);
+    add(clientSchema, es.upm.fi.emse.hotelmania.Client.class);
+        
+        
     ConceptSchema hotelSchema = new ConceptSchema(HOTEL);
     add(hotelSchema, es.upm.fi.emse.hotelmania.Hotel.class);
+    
     ConceptSchema staffSchema = new ConceptSchema(STAFF);
     add(staffSchema, es.upm.fi.emse.hotelmania.Staff.class);
+    
     ConceptSchema timeSchema = new ConceptSchema(TIME);
     add(timeSchema, es.upm.fi.emse.hotelmania.Time.class);
+    
     ConceptSchema bankAccountSchema = new ConceptSchema(BANKACCOUNT);
     add(bankAccountSchema, es.upm.fi.emse.hotelmania.BankAccount.class);
 
     // adding AgentAction(s)
+    
+    
+    AgentActionSchema RequestHotelInfoSchema = new AgentActionSchema(REQUESTHOTELINFO);
+    add(RequestHotelInfoSchema, es.upm.fi.emse.hotelmania.RequestHotelInfo.class);
+
+    AgentActionSchema HotelInfoSchema = new AgentActionSchema(HOTELINFO);
+    add(HotelInfoSchema, es.upm.fi.emse.hotelmania.HotelInfo.class);
+    
+    
+    AgentActionSchema RequestHotelBookingSchema = new AgentActionSchema(REQUESTHOTELBOOKING);
+    add(RequestHotelBookingSchema, es.upm.fi.emse.hotelmania.RequestHotelBooking.class);
+    
+    AgentActionSchema BookInfoSchema = new AgentActionSchema(BOOKINFO);
+    add(BookInfoSchema, es.upm.fi.emse.hotelmania.BookInfo.class);
+    
+    
+    
     AgentActionSchema currentTimeSchema = new AgentActionSchema(CURRENTTIME);
     add(currentTimeSchema, es.upm.fi.emse.hotelmania.CurrentTime.class);
+    
     AgentActionSchema requestStaffSchema = new AgentActionSchema(REQUESTSTAFF);
     add(requestStaffSchema, es.upm.fi.emse.hotelmania.RequestStaff.class);
+    
     AgentActionSchema openBankAccountSchema = new AgentActionSchema(OPENBANKACCOUNT);
     add(openBankAccountSchema, es.upm.fi.emse.hotelmania.OpenBankAccount.class);
+    
     AgentActionSchema hotelRegistrationSchema = new AgentActionSchema(HOTELREGISTRATION);
     add(hotelRegistrationSchema, es.upm.fi.emse.hotelmania.HotelRegistration.class);
+    
     AgentActionSchema responseBankAccountStatusSchema = new AgentActionSchema(RESPONSEBANKACCOUNTSTATUS);
     add(responseBankAccountStatusSchema, es.upm.fi.emse.hotelmania.ResponseBankAccountStatus.class);
+    
     AgentActionSchema requestBankAccountStatusSchema = new AgentActionSchema(REQUESTBANKACCOUNTSTATUS);
     add(requestBankAccountStatusSchema, es.upm.fi.emse.hotelmania.RequestBankAccountStatus.class);
 
@@ -88,6 +146,8 @@ public class HotelmaniaOntology extends jade.content.onto.Ontology  {
 
 
     // adding fields
+    clientSchema.add(CLIENT_CLIENTID, (TermSchema)getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
+    
     hotelSchema.add(HOTEL_HOTELID, (TermSchema)getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
     staffSchema.add(STAFF_RECEPTIONISTEXPERIENCED, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
     staffSchema.add(STAFF_COOKERTWOSTARS, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
@@ -98,6 +158,7 @@ public class HotelmaniaOntology extends jade.content.onto.Ontology  {
     timeSchema.add(TIME_DAY, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
     bankAccountSchema.add(BANKACCOUNT_BALANCE, (TermSchema)getSchema(BasicOntology.FLOAT), ObjectSchema.MANDATORY);
     bankAccountSchema.add(BANKACCOUNT_ACCOUNTID, (TermSchema)getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
+    
     currentTimeSchema.add(CURRENTTIME_TIME, timeSchema, ObjectSchema.MANDATORY);
     requestStaffSchema.add(REQUESTSTAFF_STAFF, staffSchema, ObjectSchema.MANDATORY);
     requestStaffSchema.add(REQUESTSTAFF_REQUESTINGHOTEL, hotelSchema, ObjectSchema.MANDATORY);
@@ -106,6 +167,28 @@ public class HotelmaniaOntology extends jade.content.onto.Ontology  {
     responseBankAccountStatusSchema.add(RESPONSEBANKACCOUNTSTATUS_BALANCE, (TermSchema)getSchema(BasicOntology.FLOAT), ObjectSchema.MANDATORY);
     requestBankAccountStatusSchema.add(REQUESTBANKACCOUNTSTATUS_HOTEL, hotelSchema, ObjectSchema.MANDATORY);
 
+    
+    RequestHotelInfoSchema.add(REQUESTHOTELINFO_STARTDATE,(TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
+    RequestHotelInfoSchema.add(REQUESTHOTELINFO_NUMBEROFDAYS,(TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
+    
+    
+    
+    HotelInfoSchema.add(HOTELINFO_TOTALPRICE, (TermSchema)getSchema(BasicOntology.FLOAT), ObjectSchema.OPTIONAL);
+    HotelInfoSchema.add(HOTELINFO_ROOMAVAILABILITY, (TermSchema)getSchema(BasicOntology.BOOLEAN), ObjectSchema.MANDATORY);
+    
+    
+    RequestHotelBookingSchema.add(REQUESTHOTELBOOKING_STARTDATE,(TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
+    RequestHotelBookingSchema.add(REQUESTHOTELBOOKING_NUMBEROFDAYS,(TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
+    RequestHotelBookingSchema.add(REQUESTHOTELBOOKING_CLIENT, clientSchema, ObjectSchema.MANDATORY);
+    
+   
+    
+    
+    BookInfoSchema.add(BOOKINFO_PRICE, (TermSchema)getSchema(BasicOntology.FLOAT), ObjectSchema.OPTIONAL);
+    
+    
+    
+    
     // adding name mappings
 
     // adding inheritance
