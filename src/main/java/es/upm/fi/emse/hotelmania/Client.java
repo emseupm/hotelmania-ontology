@@ -8,7 +8,7 @@ import jade.core.*;
 /**
 * Protege name: Client
 * @author ontology bean generator
-* @version 2015/05/14, 12:22:21
+* @version 2015/05/16, 13:45:15
 */
 public class Client implements Concept {
 
