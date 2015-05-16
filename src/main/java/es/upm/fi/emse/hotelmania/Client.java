@@ -15,11 +15,11 @@ public class Client implements Concept {
    /**
 * Protege name: clientId
    */
-   private String clientId;
-   public void setClientId(String value) { 
+   private AID clientId;
+   public void setClientId(AID value) { 
     this.clientId=value;
    }
-   public String getClientId() {
+   public AID getClientId() {
      return this.clientId;
    }
 
