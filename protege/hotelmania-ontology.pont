@@ -1,4 +1,4 @@
-; Thu May 14 13:24:27 CEST 2015
+; Sat May 16 14:05:32 CEST 2015
 ; 
 ;+ (version "3.4.8")
 ;+ (build "Build 629")
@@ -45,7 +45,8 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot clientId
-		(type STRING)
+		(type INSTANCE)
+;+		(allowed-classes AID)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot roomAvailability
@@ -453,7 +454,8 @@
 	(is-a Concept)
 	(role concrete)
 	(single-slot clientId
-		(type STRING)
+		(type INSTANCE)
+;+		(allowed-classes AID)
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
