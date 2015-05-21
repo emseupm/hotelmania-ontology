@@ -8,20 +8,9 @@ import jade.core.*;
 /**
 * Protege name: RequestHotelInfo
 * @author ontology bean generator
-* @version 2015/05/14, 12:22:21
+* @version 2015/05/21, 17:20:56
 */
 public class RequestHotelInfo implements AgentAction {
-
-   /**
-* Protege name: numberOfDays
-   */
-   private int numberOfDays;
-   public void setNumberOfDays(int value) { 
-    this.numberOfDays=value;
-   }
-   public int getNumberOfDays() {
-     return this.numberOfDays;
-   }
 
    /**
 * Protege name: startDate
@@ -32,6 +21,17 @@ public class RequestHotelInfo implements AgentAction {
    }
    public int getStartDate() {
      return this.startDate;
+   }
+
+   /**
+* Protege name: numberOfDays
+   */
+   private int numberOfDays;
+   public void setNumberOfDays(int value) { 
+    this.numberOfDays=value;
+   }
+   public int getNumberOfDays() {
+     return this.numberOfDays;
    }
 
 }

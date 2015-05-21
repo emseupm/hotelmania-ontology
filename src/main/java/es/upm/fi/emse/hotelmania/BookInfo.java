@@ -8,7 +8,7 @@ import jade.core.*;
 /**
 * Protege name: BookInfo
 * @author ontology bean generator
-* @version 2015/05/14, 12:22:21
+* @version 2015/05/21, 17:20:56
 */
 public class BookInfo implements AgentAction {
 

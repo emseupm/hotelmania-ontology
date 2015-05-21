@@ -8,20 +8,9 @@ import jade.core.*;
 /**
 * Protege name: HotelInfo
 * @author ontology bean generator
-* @version 2015/05/14, 12:22:21
+* @version 2015/05/21, 17:20:56
 */
 public class HotelInfo implements AgentAction {
-
-   /**
-* Protege name: totalPrice
-   */
-   private float totalPrice;
-   public void setTotalPrice(float value) { 
-    this.totalPrice=value;
-   }
-   public float getTotalPrice() {
-     return this.totalPrice;
-   }
 
    /**
 * Protege name: roomAvailability
@@ -32,6 +21,17 @@ public class HotelInfo implements AgentAction {
    }
    public boolean getRoomAvailability() {
      return this.roomAvailability;
+   }
+
+   /**
+* Protege name: totalPrice
+   */
+   private float totalPrice;
+   public void setTotalPrice(float value) { 
+    this.totalPrice=value;
+   }
+   public float getTotalPrice() {
+     return this.totalPrice;
    }
 
 }

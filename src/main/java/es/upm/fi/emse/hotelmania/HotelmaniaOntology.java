@@ -9,7 +9,7 @@ import jade.core.CaseInsensitiveString;
 
 /** file: HotelmaniaOntology.java
  * @author ontology bean generator
- * @version 2015/05/16, 13:45:15
+ * @version 2015/05/21, 17:20:56
  */
 public class HotelmaniaOntology extends jade.content.onto.Ontology  {
   //NAME
@@ -23,47 +23,51 @@ public class HotelmaniaOntology extends jade.content.onto.Ontology  {
 
 
    // VOCABULARY
-    public static final String REQUESTBANKACCOUNTSTATUS_HOTEL="hotel";
-    public static final String REQUESTBANKACCOUNTSTATUS="RequestBankAccountStatus";
-    public static final String BOOKINFO_PRICE="price";
-    public static final String BOOKINFO="BookInfo";
-    public static final String REQUESTHOTELINFO_STARTDATE="startDate";
-    public static final String REQUESTHOTELINFO_NUMBEROFDAYS="numberOfDays";
-    public static final String REQUESTHOTELINFO="RequestHotelInfo";
-    public static final String RESPONSEBANKACCOUNTSTATUS_BALANCE="balance";
-    public static final String RESPONSEBANKACCOUNTSTATUS="ResponseBankAccountStatus";
-    public static final String REQUESTHOTELBOOKING_STARTDATE="startDate";
+    public static final String EXPERIENCEINFO_CURRENTDAY="currentDay";
+    public static final String EXPERIENCEINFO_NUMBEROFGUESTS="numberOfGuests";
+    public static final String EXPERIENCEINFO_STAFF="staff";
+    public static final String EXPERIENCEINFO="ExperienceInfo";
     public static final String REQUESTHOTELBOOKING_NUMBEROFDAYS="numberOfDays";
+    public static final String REQUESTHOTELBOOKING_STARTDATE="startDate";
     public static final String REQUESTHOTELBOOKING_REQUESTINGCLIENT="RequestingClient";
     public static final String REQUESTHOTELBOOKING="RequestHotelBooking";
+    public static final String CURRENTTIME_TIME="time";
+    public static final String CURRENTTIME="CurrentTime";
     public static final String HOTELREGISTRATION_HOTEL="hotel";
     public static final String HOTELREGISTRATION="HotelRegistration";
-    public static final String OPENBANKACCOUNT_HOTEL="hotel";
-    public static final String OPENBANKACCOUNT="OpenBankAccount";
+    public static final String HOTELINFO_TOTALPRICE="totalPrice";
+    public static final String HOTELINFO_ROOMAVAILABILITY="roomAvailability";
+    public static final String HOTELINFO="HotelInfo";
     public static final String REQUESTSTAFF_REQUESTINGHOTEL="requestingHotel";
     public static final String REQUESTSTAFF_STAFF="staff";
     public static final String REQUESTSTAFF="RequestStaff";
-    public static final String CURRENTTIME_TIME="time";
-    public static final String CURRENTTIME="CurrentTime";
-    public static final String HOTELINFO_ROOMAVAILABILITY="roomAvailability";
-    public static final String HOTELINFO_TOTALPRICE="totalPrice";
-    public static final String HOTELINFO="HotelInfo";
-    public static final String BANKACCOUNT_ACCOUNTID="accountId";
-    public static final String BANKACCOUNT_BALANCE="balance";
-    public static final String BANKACCOUNT="BankAccount";
+    public static final String REQUESTBANKACCOUNTSTATUS_HOTEL="hotel";
+    public static final String REQUESTBANKACCOUNTSTATUS="RequestBankAccountStatus";
+    public static final String REQUESTHOTELINFO_NUMBEROFDAYS="numberOfDays";
+    public static final String REQUESTHOTELINFO_STARTDATE="startDate";
+    public static final String REQUESTHOTELINFO="RequestHotelInfo";
+    public static final String RESPONSEBANKACCOUNTSTATUS_BALANCE="balance";
+    public static final String RESPONSEBANKACCOUNTSTATUS="ResponseBankAccountStatus";
+    public static final String OPENBANKACCOUNT_HOTEL="hotel";
+    public static final String OPENBANKACCOUNT="OpenBankAccount";
+    public static final String BOOKINFO_PRICE="price";
+    public static final String BOOKINFO="BookInfo";
+    public static final String HOTEL_HOTELID="hotelId";
+    public static final String HOTEL="Hotel";
     public static final String TIME_DAY="day";
     public static final String TIME="Time";
-    public static final String STAFF_COOKERONESTAR="cookerOneStar";
-    public static final String STAFF_COOKERTHREESTARS="cookerThreeStars";
-    public static final String STAFF_RECEPTIONISTNOVICE="receptionistNovice";
-    public static final String STAFF_CLEANER="cleaner";
     public static final String STAFF_COOKERTWOSTARS="cookerTwoStars";
     public static final String STAFF_RECEPTIONISTEXPERIENCED="receptionistExperienced";
+    public static final String STAFF_COOKERTHREESTARS="cookerThreeStars";
+    public static final String STAFF_COOKERONESTAR="cookerOneStar";
+    public static final String STAFF_RECEPTIONISTNOVICE="receptionistNovice";
+    public static final String STAFF_CLEANER="cleaner";
     public static final String STAFF="Staff";
     public static final String CLIENT_CLIENTID="clientId";
     public static final String CLIENT="Client";
-    public static final String HOTEL_HOTELID="hotelId";
-    public static final String HOTEL="Hotel";
+    public static final String BANKACCOUNT_BALANCE="balance";
+    public static final String BANKACCOUNT_ACCOUNTID="accountId";
+    public static final String BANKACCOUNT="BankAccount";
 
   /**
    * Constructor
@@ -73,71 +77,76 @@ public class HotelmaniaOntology extends jade.content.onto.Ontology  {
     try { 
 
     // adding Concept(s)
-    ConceptSchema hotelSchema = new ConceptSchema(HOTEL);
-    add(hotelSchema, es.upm.fi.emse.hotelmania.Hotel.class);
+    ConceptSchema bankAccountSchema = new ConceptSchema(BANKACCOUNT);
+    add(bankAccountSchema, es.upm.fi.emse.hotelmania.BankAccount.class);
     ConceptSchema clientSchema = new ConceptSchema(CLIENT);
     add(clientSchema, es.upm.fi.emse.hotelmania.Client.class);
     ConceptSchema staffSchema = new ConceptSchema(STAFF);
     add(staffSchema, es.upm.fi.emse.hotelmania.Staff.class);
     ConceptSchema timeSchema = new ConceptSchema(TIME);
     add(timeSchema, es.upm.fi.emse.hotelmania.Time.class);
-    ConceptSchema bankAccountSchema = new ConceptSchema(BANKACCOUNT);
-    add(bankAccountSchema, es.upm.fi.emse.hotelmania.BankAccount.class);
+    ConceptSchema hotelSchema = new ConceptSchema(HOTEL);
+    add(hotelSchema, es.upm.fi.emse.hotelmania.Hotel.class);
 
     // adding AgentAction(s)
-    AgentActionSchema hotelInfoSchema = new AgentActionSchema(HOTELINFO);
-    add(hotelInfoSchema, es.upm.fi.emse.hotelmania.HotelInfo.class);
-    AgentActionSchema currentTimeSchema = new AgentActionSchema(CURRENTTIME);
-    add(currentTimeSchema, es.upm.fi.emse.hotelmania.CurrentTime.class);
-    AgentActionSchema requestStaffSchema = new AgentActionSchema(REQUESTSTAFF);
-    add(requestStaffSchema, es.upm.fi.emse.hotelmania.RequestStaff.class);
+    AgentActionSchema bookInfoSchema = new AgentActionSchema(BOOKINFO);
+    add(bookInfoSchema, es.upm.fi.emse.hotelmania.BookInfo.class);
     AgentActionSchema openBankAccountSchema = new AgentActionSchema(OPENBANKACCOUNT);
     add(openBankAccountSchema, es.upm.fi.emse.hotelmania.OpenBankAccount.class);
-    AgentActionSchema hotelRegistrationSchema = new AgentActionSchema(HOTELREGISTRATION);
-    add(hotelRegistrationSchema, es.upm.fi.emse.hotelmania.HotelRegistration.class);
-    AgentActionSchema requestHotelBookingSchema = new AgentActionSchema(REQUESTHOTELBOOKING);
-    add(requestHotelBookingSchema, es.upm.fi.emse.hotelmania.RequestHotelBooking.class);
     AgentActionSchema responseBankAccountStatusSchema = new AgentActionSchema(RESPONSEBANKACCOUNTSTATUS);
     add(responseBankAccountStatusSchema, es.upm.fi.emse.hotelmania.ResponseBankAccountStatus.class);
     AgentActionSchema requestHotelInfoSchema = new AgentActionSchema(REQUESTHOTELINFO);
     add(requestHotelInfoSchema, es.upm.fi.emse.hotelmania.RequestHotelInfo.class);
-    AgentActionSchema bookInfoSchema = new AgentActionSchema(BOOKINFO);
-    add(bookInfoSchema, es.upm.fi.emse.hotelmania.BookInfo.class);
     AgentActionSchema requestBankAccountStatusSchema = new AgentActionSchema(REQUESTBANKACCOUNTSTATUS);
     add(requestBankAccountStatusSchema, es.upm.fi.emse.hotelmania.RequestBankAccountStatus.class);
+    AgentActionSchema requestStaffSchema = new AgentActionSchema(REQUESTSTAFF);
+    add(requestStaffSchema, es.upm.fi.emse.hotelmania.RequestStaff.class);
+    AgentActionSchema hotelInfoSchema = new AgentActionSchema(HOTELINFO);
+    add(hotelInfoSchema, es.upm.fi.emse.hotelmania.HotelInfo.class);
+    AgentActionSchema hotelRegistrationSchema = new AgentActionSchema(HOTELREGISTRATION);
+    add(hotelRegistrationSchema, es.upm.fi.emse.hotelmania.HotelRegistration.class);
+    AgentActionSchema currentTimeSchema = new AgentActionSchema(CURRENTTIME);
+    add(currentTimeSchema, es.upm.fi.emse.hotelmania.CurrentTime.class);
+    AgentActionSchema requestHotelBookingSchema = new AgentActionSchema(REQUESTHOTELBOOKING);
+    add(requestHotelBookingSchema, es.upm.fi.emse.hotelmania.RequestHotelBooking.class);
 
     // adding AID(s)
 
     // adding Predicate(s)
+    PredicateSchema experienceInfoSchema = new PredicateSchema(EXPERIENCEINFO);
+    add(experienceInfoSchema, es.upm.fi.emse.hotelmania.ExperienceInfo.class);
 
 
     // adding fields
-    hotelSchema.add(HOTEL_HOTELID, (TermSchema)getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
+    bankAccountSchema.add(BANKACCOUNT_ACCOUNTID, (TermSchema)getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
+    bankAccountSchema.add(BANKACCOUNT_BALANCE, (TermSchema)getSchema(BasicOntology.FLOAT), ObjectSchema.MANDATORY);
     clientSchema.add(CLIENT_CLIENTID, (ConceptSchema)getSchema(BasicOntology.AID), ObjectSchema.MANDATORY);
-    staffSchema.add(STAFF_RECEPTIONISTEXPERIENCED, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
-    staffSchema.add(STAFF_COOKERTWOSTARS, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
     staffSchema.add(STAFF_CLEANER, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
     staffSchema.add(STAFF_RECEPTIONISTNOVICE, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
-    staffSchema.add(STAFF_COOKERTHREESTARS, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
     staffSchema.add(STAFF_COOKERONESTAR, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
+    staffSchema.add(STAFF_COOKERTHREESTARS, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
+    staffSchema.add(STAFF_RECEPTIONISTEXPERIENCED, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
+    staffSchema.add(STAFF_COOKERTWOSTARS, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
     timeSchema.add(TIME_DAY, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
-    bankAccountSchema.add(BANKACCOUNT_BALANCE, (TermSchema)getSchema(BasicOntology.FLOAT), ObjectSchema.MANDATORY);
-    bankAccountSchema.add(BANKACCOUNT_ACCOUNTID, (TermSchema)getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
-    hotelInfoSchema.add(HOTELINFO_TOTALPRICE, (TermSchema)getSchema(BasicOntology.FLOAT), ObjectSchema.OPTIONAL);
-    hotelInfoSchema.add(HOTELINFO_ROOMAVAILABILITY, (TermSchema)getSchema(BasicOntology.BOOLEAN), ObjectSchema.MANDATORY);
-    currentTimeSchema.add(CURRENTTIME_TIME, timeSchema, ObjectSchema.MANDATORY);
+    hotelSchema.add(HOTEL_HOTELID, (TermSchema)getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
+    bookInfoSchema.add(BOOKINFO_PRICE, (TermSchema)getSchema(BasicOntology.FLOAT), ObjectSchema.MANDATORY);
+    openBankAccountSchema.add(OPENBANKACCOUNT_HOTEL, hotelSchema, ObjectSchema.MANDATORY);
+    responseBankAccountStatusSchema.add(RESPONSEBANKACCOUNTSTATUS_BALANCE, (TermSchema)getSchema(BasicOntology.FLOAT), ObjectSchema.MANDATORY);
+    requestHotelInfoSchema.add(REQUESTHOTELINFO_STARTDATE, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
+    requestHotelInfoSchema.add(REQUESTHOTELINFO_NUMBEROFDAYS, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
+    requestBankAccountStatusSchema.add(REQUESTBANKACCOUNTSTATUS_HOTEL, hotelSchema, ObjectSchema.MANDATORY);
     requestStaffSchema.add(REQUESTSTAFF_STAFF, staffSchema, ObjectSchema.MANDATORY);
     requestStaffSchema.add(REQUESTSTAFF_REQUESTINGHOTEL, hotelSchema, ObjectSchema.MANDATORY);
-    openBankAccountSchema.add(OPENBANKACCOUNT_HOTEL, hotelSchema, ObjectSchema.MANDATORY);
+    hotelInfoSchema.add(HOTELINFO_ROOMAVAILABILITY, (TermSchema)getSchema(BasicOntology.BOOLEAN), ObjectSchema.MANDATORY);
+    hotelInfoSchema.add(HOTELINFO_TOTALPRICE, (TermSchema)getSchema(BasicOntology.FLOAT), ObjectSchema.OPTIONAL);
     hotelRegistrationSchema.add(HOTELREGISTRATION_HOTEL, hotelSchema, ObjectSchema.MANDATORY);
+    currentTimeSchema.add(CURRENTTIME_TIME, timeSchema, ObjectSchema.MANDATORY);
     requestHotelBookingSchema.add(REQUESTHOTELBOOKING_REQUESTINGCLIENT, clientSchema, ObjectSchema.MANDATORY);
-    requestHotelBookingSchema.add(REQUESTHOTELBOOKING_NUMBEROFDAYS, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
     requestHotelBookingSchema.add(REQUESTHOTELBOOKING_STARTDATE, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
-    responseBankAccountStatusSchema.add(RESPONSEBANKACCOUNTSTATUS_BALANCE, (TermSchema)getSchema(BasicOntology.FLOAT), ObjectSchema.MANDATORY);
-    requestHotelInfoSchema.add(REQUESTHOTELINFO_NUMBEROFDAYS, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
-    requestHotelInfoSchema.add(REQUESTHOTELINFO_STARTDATE, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
-    bookInfoSchema.add(BOOKINFO_PRICE, (TermSchema)getSchema(BasicOntology.FLOAT), ObjectSchema.MANDATORY);
-    requestBankAccountStatusSchema.add(REQUESTBANKACCOUNTSTATUS_HOTEL, hotelSchema, ObjectSchema.MANDATORY);
+    requestHotelBookingSchema.add(REQUESTHOTELBOOKING_NUMBEROFDAYS, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
+    experienceInfoSchema.add(EXPERIENCEINFO_STAFF, staffSchema, ObjectSchema.MANDATORY);
+    experienceInfoSchema.add(EXPERIENCEINFO_NUMBEROFGUESTS, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
+    experienceInfoSchema.add(EXPERIENCEINFO_CURRENTDAY, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
 
     // adding name mappings
 

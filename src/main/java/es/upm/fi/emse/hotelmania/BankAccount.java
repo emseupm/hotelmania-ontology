@@ -8,20 +8,9 @@ import jade.core.*;
 /**
 * Protege name: BankAccount
 * @author ontology bean generator
-* @version 2015/05/9, 15:17:15
+* @version 2015/05/21, 17:20:56
 */
 public class BankAccount implements Concept {
-
-   /**
-* Protege name: balance
-   */
-   private float balance;
-   public void setBalance(float value) { 
-    this.balance=value;
-   }
-   public float getBalance() {
-     return this.balance;
-   }
 
    /**
 * Protege name: accountId
@@ -32,6 +21,17 @@ public class BankAccount implements Concept {
    }
    public String getAccountId() {
      return this.accountId;
+   }
+
+   /**
+* Protege name: balance
+   */
+   private float balance;
+   public void setBalance(float value) { 
+    this.balance=value;
+   }
+   public float getBalance() {
+     return this.balance;
    }
 
 }

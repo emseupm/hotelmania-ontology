@@ -1,4 +1,4 @@
-; Sat May 16 14:05:32 CEST 2015
+; Thu May 21 17:07:22 CEST 2015
 ; 
 ;+ (version "3.4.8")
 ;+ (build "Build 629")
@@ -32,6 +32,10 @@
 	(%3AJADE-IGNORE TRUE))
 
 ([CurrentTime] of  %3AJADE-CLASS
+
+	(%3AJADE-IGNORE FALSE))
+
+([ExperienceInfo] of  %3AJADE-CLASS
 
 	(%3AJADE-IGNORE FALSE))
 

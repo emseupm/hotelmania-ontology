@@ -8,31 +8,9 @@ import jade.core.*;
 /**
 * Protege name: Staff
 * @author ontology bean generator
-* @version 2015/05/9, 15:17:15
+* @version 2015/05/21, 17:20:56
 */
 public class Staff implements Concept {
-
-   /**
-* Protege name: receptionistExperienced
-   */
-   private int receptionistExperienced;
-   public void setReceptionistExperienced(int value) { 
-    this.receptionistExperienced=value;
-   }
-   public int getReceptionistExperienced() {
-     return this.receptionistExperienced;
-   }
-
-   /**
-* Protege name: cookerTwoStars
-   */
-   private int cookerTwoStars;
-   public void setCookerTwoStars(int value) { 
-    this.cookerTwoStars=value;
-   }
-   public int getCookerTwoStars() {
-     return this.cookerTwoStars;
-   }
 
    /**
 * Protege name: cleaner
@@ -57,6 +35,17 @@ public class Staff implements Concept {
    }
 
    /**
+* Protege name: cookerOneStar
+   */
+   private int cookerOneStar;
+   public void setCookerOneStar(int value) { 
+    this.cookerOneStar=value;
+   }
+   public int getCookerOneStar() {
+     return this.cookerOneStar;
+   }
+
+   /**
 * Protege name: cookerThreeStars
    */
    private int cookerThreeStars;
@@ -68,14 +57,25 @@ public class Staff implements Concept {
    }
 
    /**
-* Protege name: cookerOneStar
+* Protege name: receptionistExperienced
    */
-   private int cookerOneStar;
-   public void setCookerOneStar(int value) { 
-    this.cookerOneStar=value;
+   private int receptionistExperienced;
+   public void setReceptionistExperienced(int value) { 
+    this.receptionistExperienced=value;
    }
-   public int getCookerOneStar() {
-     return this.cookerOneStar;
+   public int getReceptionistExperienced() {
+     return this.receptionistExperienced;
+   }
+
+   /**
+* Protege name: cookerTwoStars
+   */
+   private int cookerTwoStars;
+   public void setCookerTwoStars(int value) { 
+    this.cookerTwoStars=value;
+   }
+   public int getCookerTwoStars() {
+     return this.cookerTwoStars;
    }
 
 }
